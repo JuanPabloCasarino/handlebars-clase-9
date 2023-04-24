@@ -4,7 +4,8 @@ const handlebars = require('express-handlebars')
 const routes = require('./routes/handlers')
 const path = require('path')
 
-
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 app.engine('handlebars', handlebars.engine({ 
     defaultLayout: 'main',
     layoutsDir: path.join(__dirname, 'views/layouts')
